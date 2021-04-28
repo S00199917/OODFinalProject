@@ -99,6 +99,10 @@
     <Compile Include="Migrations\202104281153149_AddImageURL.designer.cs">
       <DependentUpon>202104281153149_AddImageURL.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104282355401_AddGameGenres.cs" />
+    <Compile Include="Migrations\202104282355401_AddGameGenres.designer.cs">
+      <DependentUpon>202104282355401_AddGameGenres.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -118,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104281153149_AddImageURL.resx">
       <DependentUpon>202104281153149_AddImageURL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104282355401_AddGameGenres.resx">
+      <DependentUpon>202104282355401_AddGameGenres.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

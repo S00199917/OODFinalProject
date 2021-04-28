@@ -62,6 +62,16 @@ namespace GameList
             tbxSearch.Text = "";
         }
 
+        private void lbxLibraryList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Games selectedGame = lbxLibraryList.SelectedItem as Games;
+
+            if (selectedGame != null)
+            {
+                imgGameImage.Source = new BitmapImage(new Uri(selectedGame.ImageURL));
+            }
+        }
+
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
             List<Games> searchedGame = new List<Games>();

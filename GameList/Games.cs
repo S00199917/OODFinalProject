@@ -16,6 +16,7 @@ namespace GameList
         public string GameDescription { get; set; }
         public decimal GamePrice { get; set; }
         public decimal GameRating { get; set; }
+        public List<string> GameGenres { get; set; }
         public string ImageURL { get; set; }
 
         public int CompareTo(object obj)

@@ -191,7 +191,7 @@
                     <!--#endregion-->
 
                     <Viewbox Grid.ColumnSpan="2" Grid.Row="2" Grid.RowSpan="7">
-                        <ListBox x:Name="lbxLibraryList" Height="460" Width="241"/>
+                        <ListBox x:Name="lbxLibraryList" Height="460" Width="241" SelectionChanged="lbxLibraryList_SelectionChanged"/>
                     </Viewbox>
 
 
@@ -206,8 +206,7 @@
                     <Viewbox Grid.Column="1" Grid.Row="1" >
                         <Button x:Name="btnSearch" Content="=>" FontSize="18" Click="btnSearch_Click"/>
                     </Viewbox>
-
-
+                    
                     <Image x:Name="imgGameImage" Grid.Row="7" Grid.RowSpan="2" Grid.Column="2" Grid.ColumnSpan="2" Margin="10 10 10 10"/>
                 </Grid>
             </TabItem>
