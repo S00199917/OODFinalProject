@@ -53,6 +53,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -103,6 +106,14 @@
     <Compile Include="Migrations\202104282355401_AddGameGenres.designer.cs">
       <DependentUpon>202104282355401_AddGameGenres.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104282357289_AddGameGenres1.cs" />
+    <Compile Include="Migrations\202104282357289_AddGameGenres1.designer.cs">
+      <DependentUpon>202104282357289_AddGameGenres1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104282359150_AddGameGenres2.cs" />
+    <Compile Include="Migrations\202104282359150_AddGameGenres2.designer.cs">
+      <DependentUpon>202104282359150_AddGameGenres2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -125,6 +136,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104282355401_AddGameGenres.resx">
       <DependentUpon>202104282355401_AddGameGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104282357289_AddGameGenres1.resx">
+      <DependentUpon>202104282357289_AddGameGenres1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104282359150_AddGameGenres2.resx">
+      <DependentUpon>202104282359150_AddGameGenres2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

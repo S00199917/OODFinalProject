@@ -16,7 +16,6 @@ namespace GameList
         public string GameDescription { get; set; }
         public decimal GamePrice { get; set; }
         public decimal GameRating { get; set; }
-        public List<string> GameGenres { get; set; }
         public string ImageURL { get; set; }
 
         public int CompareTo(object obj)
@@ -24,6 +23,11 @@ namespace GameList
             Games that = obj as Games;
 
             return this.GameName.CompareTo(that.GameName);
+        }
+
+        public void RatingChange(decimal yourRating)
+        {
+            GamePrice = (GamePrice + yourRating) / 2;
         }
 
         public override string ToString()

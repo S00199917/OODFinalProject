@@ -9,10 +9,18 @@
         Loaded="Window_Loaded"
         MinWidth="1450"
         MinHeight="970" Height="976" Width="1462">
+    <Window.Resources>
+        <DataTemplate x:Key="listboxGames">
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <Image Source="{Binding ImageURL}" Width="300" Height="200"/>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+
     <Grid>
         <TabControl TabStripPlacement="Top" Background="#FF202225">
             <!--#region Shop-->
-            <TabItem Name="Shop" Header="Shop" Width="50">
+            <TabItem Name="Shop" Header="Shop" Width="75">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
@@ -34,9 +42,9 @@
                     </Viewbox>
 
 
-                    <ListBox Name="lbxGameList" Margin="10" Width="741" Height="1075" Grid.Column="0" Grid.Row="1" FontSize="30"/>
+                    <ListBox Name="lbxGameList" Margin="10" Width="741" Height="1075" Grid.Column="0" Grid.Row="1" FontSize="30" ItemTemplate="{StaticResource listboxGames}"/>
 
-                    <ListBox Name="lbxTrolly" Margin="10" Grid.Column="2" Grid.Row="1" FontSize="30"/>
+                    <ListBox Name="lbxTrolly" Margin="10" Grid.Column="2" Grid.Row="1" FontSize="30" ItemTemplate="{StaticResource listboxGames}"/>
 
                     <Viewbox Grid.Column="1" Grid.Row="1">
                         <Button Name="btnAddToCart" Content="Add To Cart" Click="btnAddToCart_Click" Height="40" Width="100"/>
@@ -46,168 +54,139 @@
             <!--#endregion-->
 
             <!--#region Library-->
-            <TabItem Name="Library" Header="Library" Width="50">
+            <TabItem Name="Library" Header="Library" Width="75">
                 <Grid>
+                    <!--#region Row and Column-->
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="9*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="3*"/>
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="5*"/>
-                        <ColumnDefinition Width="5*"/>
-                        <ColumnDefinition Width="3*"/>
-                        <ColumnDefinition Width="3*"/>
-                        <ColumnDefinition Width="3*"/>
-                        <ColumnDefinition Width="3*"/>
-                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
                     </Grid.ColumnDefinitions>
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="4*"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="4*"/>
                         <RowDefinition Height="4*"/>
                     </Grid.RowDefinitions>
+                    <!--#endregion-->
 
-                    <Viewbox Grid.ColumnSpan="2">
+                    <Viewbox Grid.ColumnSpan="3">
                         <Label Content="Games"/>
                     </Viewbox>
 
-                    <Viewbox Grid.Column="2">
+                    <Viewbox Grid.Column="4">
                         <Label Content="Description"/>
                     </Viewbox>
 
-                    <Viewbox Grid.Column="4" Grid.ColumnSpan="5">
-                        <Label Content="Genres"/>
-                    </Viewbox>
-
-                    <Viewbox Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="6">
+                    <Viewbox Grid.Column="4" Grid.Row="4">
                         <Label Content="Images"/>
                     </Viewbox>
 
-                    <!--#region Genres-->
-                    <Viewbox Grid.Column="4" Grid.Row="1" >
-                        <CheckBox Content="Action" Width="120"/>
-                    </Viewbox>
-
-                    <Viewbox Grid.Column="5" Grid.Row="1">
-                        <CheckBox Content="Platformer" Width="120"/>
-                    </Viewbox>
-
-                    <Viewbox Grid.Column="6" Grid.Row="1">
-                        <CheckBox Content="Shooter" Width="120"/>
-                    </Viewbox>
-
-                    <Viewbox Grid.Column="7" Grid.Row="1">
-                        <CheckBox Content="Fighting" Width="120"/>
-                    </Viewbox>
-
-                    <Viewbox Grid.Column="8" Grid.Row="1">
-                        <CheckBox Content="Stealth" Width="120"/>
-                    </Viewbox>
-
-                    <Viewbox Grid.Column="4" Grid.Row="2">
-                        <CheckBox Content="Survival" Width="120"/>
-                    </Viewbox>
-
-                    <Viewbox Grid.Column="5" Grid.Row="2">
-                        <CheckBox Content="Rhythm" Width="120"/>
-                    </Viewbox>
-
-                    <Viewbox Grid.Column="6" Grid.Row="2">
-                        <CheckBox Content="Survival Horror" Width="120"/>
-                    </Viewbox>
-
-                    <Viewbox Grid.Column="7" Grid.Row="2">
-                        <CheckBox Content="Text Adventure" Width="120"/>
-                    </Viewbox>
-
-                    <Viewbox Grid.Column="8" Grid.Row="2">
-                        <CheckBox Content="MMORPG" Width="120"/>
-                    </Viewbox>
-
-                    <Viewbox Grid.Column="4" Grid.Row="3">
-                        <CheckBox Content="Rouguelike" Width="120"/>
-                    </Viewbox>
-
-                    <Viewbox Grid.Column="5" Grid.Row="3">
-                        <CheckBox Content="Tactical RPG" Width="120"/>
-                    </Viewbox>
-
-                    <Viewbox Grid.Column="6" Grid.Row="3">
-                        <CheckBox Content="Sandbox" Width="120"/>
-                    </Viewbox>
-
-                    <Viewbox Grid.Column="7" Grid.Row="3">
-                        <CheckBox Content="JRPG" Width="120"/>
-                    </Viewbox>
-
-                    <Viewbox Grid.Column="8" Grid.Row="3">
-                        <CheckBox Content="RTS" Width="120"/>
-                    </Viewbox>
-
-                    <Viewbox Grid.Column="4" Grid.Row="4">
-                        <CheckBox Content="Tower Defense" Width="120"/>
+                    <Viewbox Grid.Column="5">
+                        <Label Content="Price"/>
                     </Viewbox>
 
                     <Viewbox Grid.Column="5" Grid.Row="4">
-                        <CheckBox Content="Racing" Width="120"/>
+                        <Label Content="Rating"/>
                     </Viewbox>
 
-                    <Viewbox Grid.Column="6" Grid.Row="4">
-                        <CheckBox Content="Team Sports" Width="120"/>
+                    <ListBox x:Name="lbxLibraryList" SelectionChanged="lbxLibraryList_SelectionChanged" Grid.Row="2" Grid.RowSpan="5" Margin="10,0,0,0" Grid.ColumnSpan="3" FontSize="30"/>
+
+                    <Viewbox Grid.Row="1" Grid.ColumnSpan="2">
+                        <TextBox x:Name="tbxSearch" Margin="10, 10, 10, 10" Text="Search" FontSize="22" Width="380" Height="31" TextChanged="tbxSearch_TextChanged" GotFocus="tbxSearch_GotFocus"/>
                     </Viewbox>
 
-                    <Viewbox Grid.Column="7" Grid.Row="4">
-                        <CheckBox Content="Competitive" Width="120"/>
+                    <Viewbox Grid.Column="2" Grid.Row="1">
+                        <Button x:Name="btnFavorite" Content="Favorite" Click="btnFavorite_Click" Width="57" Height="19"/>
                     </Viewbox>
 
-                    <Viewbox Grid.Column="8" Grid.Row="4">
-                        <CheckBox Content="Casual" Width="120"/>
+                    <TextBlock Grid.Column="4" Grid.Row="2" x:Name="tblkDescription" FontSize="25" TextWrapping="Wrap" Foreground="White"/>
+
+                    <Image x:Name="imgGameImage" Grid.Row="5" Grid.RowSpan="2" Grid.Column="4" Margin="10 10 10 10"/>
+
+                    <Viewbox Grid.Column="5" Grid.Row="1" Grid.RowSpan="2">
+                        <TextBlock x:Name="tblkPrice" Foreground="White"/>
                     </Viewbox>
 
-                    <Viewbox Grid.Column="4" Grid.Row="5">
-                        <CheckBox Content="Trivia" Width="120"/>
+                    <Viewbox Grid.Row="5" Grid.RowSpan="2" Grid.Column="5">
+                        <TextBlock x:Name="tblkRating" Foreground="White"/>
                     </Viewbox>
+                </Grid>
+            </TabItem>
+            <!--#endregion-->
 
-                    <Viewbox Grid.Column="5" Grid.Row="5">
-                        <CheckBox Content="Idle" Width="120"/>
-                    </Viewbox>
+            <!--#region Favorite-->
+            <TabItem Header="Favorite" Width="75">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
 
-                    <Viewbox Grid.Column="6" Grid.Row="5">
-                        <CheckBox Content="Party" Width="120"/>
-                    </Viewbox>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="8.5*"/>
+                    </Grid.RowDefinitions>
 
-                    <Viewbox Grid.Column="7" Grid.Row="5">
-                        <CheckBox Content="MMO" Width="120"/>
-                    </Viewbox>
-
-                    <Viewbox Grid.Column="8" Grid.Row="5">
-                        <CheckBox Content="VR" Width="120"/>
-                    </Viewbox>
-                    <!--#endregion-->
-
-                    <Viewbox Grid.ColumnSpan="2" Grid.Row="2" Grid.RowSpan="7">
-                        <ListBox x:Name="lbxLibraryList" Height="460" Width="241" SelectionChanged="lbxLibraryList_SelectionChanged"/>
-                    </Viewbox>
-
+                    <Label Content="Favorite Games" FontSize="20px"/>
 
                     <Viewbox Grid.Row="1">
-                        <TextBox x:Name="tbxSearch" Margin="10, 10, 10, 10" Text="Search" FontSize="22" GotFocus="tbxSearch_GotFocus" Width="380" Height="31"/>
+                        <Button Content="Refresh" Name="btnRefresh" Click="btnRefresh_Click"/>
                     </Viewbox>
 
-                    <Viewbox Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="2" Grid.RowSpan="2">
-                        <TextBlock x:Name="tblkDescription"/>
+                    <Image x:Name="imgFavorite" Grid.Row="2"/>
+                </Grid>
+            </TabItem>
+            <!--#endregion-->
+
+            <!--#region Add-->
+            <TabItem Header="Add Game" Width="75">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Viewbox Grid.Column="2">
+                        <Label Content="Add a game"/>
                     </Viewbox>
 
-                    <Viewbox Grid.Column="1" Grid.Row="1" >
-                        <Button x:Name="btnSearch" Content="=>" FontSize="18" Click="btnSearch_Click"/>
+                    <Viewbox Grid.Column="1" Grid.Row="1">
+                        <TextBox x:Name="tbxEnterTitle" Width="137" Height="19" Text="Enter Game Name" GotFocus="tbxEnterTitle_GotFocus"/>
                     </Viewbox>
-                    
-                    <Image x:Name="imgGameImage" Grid.Row="7" Grid.RowSpan="2" Grid.Column="2" Grid.ColumnSpan="2" Margin="10 10 10 10"/>
+
+                    <Viewbox Grid.Column="1" Grid.Row="3" Grid.RowSpan="3">
+                        <TextBox x:Name="tbxEnterDescription" Height="196" Width="263" Text="Enter Description" FontSize="20" GotFocus="tbxEnterDescription_GotFocus" TextWrapping="WrapWithOverflow"/>
+                    </Viewbox>
+
+                    <TextBox x:Name="tbxEnterReview" Grid.Row="1" Grid.Column="3" Text="00" Margin="124,43,216,46" FontSize="50" GotFocus="tbxEnterReview_GotFocus"/>
+                    <TextBlock Text="/10" Grid.Row="1" Grid.Column="3" Margin="202,44,0,152" HorizontalAlignment="Left" Width="216" FontSize="50" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+
+                    <TextBlock Text="€" Grid.Row="2" Grid.Column="3" FontSize="50" Grid.ColumnSpan="2" Margin="58,45,149,108" Grid.RowSpan="2"/>
+                    <TextBox x:Name="tbxEnterPrice" Grid.Row="2" Grid.Column="3" Margin="94,45,0,39" FontSize="50" Text="Price" GotFocus="tbxEnterPrice_GotFocus"/>
+
+                    <TextBox x:Name="tbxEnterURL" Grid.Column="3" Grid.Row="3" FontSize="40" Margin="0,10" Text="Enter URL" GotFocus="tbxEnterURL_GotFocus"/>
+
+                    <Button x:Name="btnAddNewGame" Grid.Column="2" Grid.Row="6" Content="Add Game" Margin="0,39,0,41" FontSize="30" Click="btnAddNewGame_Click"/>
                 </Grid>
             </TabItem>
             <!--#endregion-->
